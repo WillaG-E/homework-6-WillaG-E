@@ -13,35 +13,36 @@ public class MorseTree {
     }
 
     private void buildTree(){
-        insert("e", new String[]{"o"});
-        insert("t", new String[]{"-"});
-        insert("i", new String[]{"o", "o"});
-        insert("a", new String[]{"o", "-"});
-        insert("n", new String[]{"-", "o"});
-        insert("m", new String[]{"-", "-"});
-        insert("s", new String[]{"o", "o", "o"});
-        insert("u", new String[]{"o", "o", "-"});
-        insert("r", new String[]{"o", "-", "o"});
-        insert("w", new String[]{"o", "-", "-"});
-        insert("d", new String[]{"-", "o", "o"});
-        insert("k", new String[]{"-", "o", "-"});
-        insert("g", new String[]{"-", "-", "o"});
-        insert("o", new String[]{"-", "-", "-"});
-        insert("h", new String[]{"o", "o", "o", "o"});
-        insert("v", new String[]{"o", "o", "o", "-"});
-        insert("f", new String[]{"o", "o", "-", "o"});
-        insert("l", new String[]{"o", "-", "o", "o"});
-        insert("p", new String[]{"o", "-", "-", "o"});
-        insert("j", new String[]{"o", "-", "-", "-"});
-        insert("b", new String[]{"-", "o", "o", "o"});
-        insert("x", new String[]{"-", "o", "o", "-"});
-        insert("c", new String[]{"-", "o", "-", "o"});
-        insert("y", new String[]{"-", "o", "-", "-"});
-        insert("z", new String[]{"-", "-", "o", "o"});
-        insert("q", new String[]{"-", "-", "o", "-"});
+        insert("e", "o");
+        insert("t", "-");
+        insert("i", "o o");
+        insert("a", "o -");
+        insert("n", "- o");
+        insert("m", "- -");
+        insert("s", "o o o");
+        insert("u", "o o -");
+        insert("r", "o - o");
+        insert("w", "o - -");
+        insert("d", "- o o");
+        insert("k", "- o -");
+        insert("g", "- - o");
+        insert("o", "- - -");
+        insert("h", "o o o o");
+        insert("v", "o o o -");
+        insert("f", "o o - o");
+        insert("l", "o - o o");
+        insert("p", "o - - o");
+        insert("j", "o - - -");
+        insert("b", "- o o o");
+        insert("x", "- o o -");
+        insert("c", "- o - o");
+        insert("y", "- o - -");
+        insert("z", "- - o o");
+        insert("q", "- - o -");
     }
 }
 
-private void insert(String letter, ){
-    
+private void insert(String letter, String morseCode){
+    TreeNode<String> currect = root;
+    for 
 }
