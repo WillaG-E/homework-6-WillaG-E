@@ -43,6 +43,20 @@ public class MorseTree {
 }
 
 private void insert(String letter, String morseCode){
-    TreeNode<String> currect = root;
-    for 
+    TreeNode<String> current = root;
+    for(int i=0; i < morseCode.length(); i++){
+        char symbol = morseCode.charAt(i);
+        if(symbol == 'o'){
+            if(current.getLeft() == null){
+                current.setLeft(new TreeNode<>(""));
+            }
+            current = current.getLeft();
+        } else if (symbol == '-'){
+            if(current.getRight() == null){
+                current.setRight(new TreeNode<>(""));
+            }
+            current = current.getRight();
+        }
+    }
+    current.setElement(letter);
 }
