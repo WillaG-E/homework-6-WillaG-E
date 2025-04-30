@@ -1,10 +1,14 @@
-import java.util.*;
+import java.util.HashMap;
 
 public class MorseTree {
     private TreeNode<String> root;
+    private HashMap<String, String> encode;
+    private HashMap<String, String> decode;
    
     public MorseTree(){
         root = new TreeNode<>("");
+        encode = new HashMap<>();
+        decode = new HashMap<>();
         buildTree();
     }
 
@@ -36,4 +40,8 @@ public class MorseTree {
         insert("z", new String[]{"-", "-", "o", "o"});
         insert("q", new String[]{"-", "-", "o", "-"});
     }
+}
+
+private void insert(String letter, ){
+    
 }
