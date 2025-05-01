@@ -2,13 +2,13 @@ import java.util.HashMap;
 
 public class MorseTree {
     private TreeNode<String> root;
-    private HashMap<String, String> encode;
-    private HashMap<String, String> decode;
+    private HashMap<String, String> engToMorse;
+    private HashMap<String, String> morseToEng;
    
     public MorseTree(){
         root = new TreeNode<>("");
-        encode = new HashMap<>();
-        decode = new HashMap<>();
+        engToMorse = new HashMap<>();
+        morseToEng = new HashMap<>();
         buildTree();
     }
 
@@ -40,7 +40,6 @@ public class MorseTree {
         insert("z", "- - o o");
         insert("q", "- - o -");
     }
-}
 
 private void insert(String letter, String morseCode){
     TreeNode<String> current = root;
@@ -60,8 +59,8 @@ private void insert(String letter, String morseCode){
     }
     current.setElement(letter);
 
-    encode.put(letter.toLowerCase(), morseCode);
-    decode.put(morseCode, letter.toLowerCase());
+    engToMorse.put(letter.toLowerCase(), morseCode);
+    morseToEng.put(morseCode, letter.toLowerCase());
 }
 
 public String preorder(){
@@ -75,5 +74,19 @@ public String postorder(){
     StringBuilder result = new StringBuilder();
     traversePostOrder(root, result);
     return result.toString().trim();
+}
+
+public String engToMorse(String text){
+    StringBuilder result = new StringBuilder();
+    text = text.toLowerCase().replaceAll("\\s", "");
+    for(int i=0; i < text.length(); i++){
+        String letter = String.valueOf(text.charAt(i));
+        if(engToMorse.containsKey(letter)){
+            result.append(engToMorse.get(letter)).append(" | ");
+        }
+    }
+    return result.toString().trim();
+}
+
 }
 
