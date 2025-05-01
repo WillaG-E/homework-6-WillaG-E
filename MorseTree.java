@@ -69,11 +69,29 @@ public class MorseTree {
         return result.toString().trim();
     }
 
+    private void traversePreOrder(TreeNode<String> node, StringBuilder result){
+        if(node == null) return;
+        if(!node.getElement().equals("")){
+            result.append(node.getElement()).append(" ");
+        }
+        traversePreOrder(node.getLeft(), result);
+        traversePreOrder(node.getRight(), result);
+    }
+
 
     public String postorder(){
         StringBuilder result = new StringBuilder();
         traversePostOrder(root, result);
         return result.toString().trim();
+    }
+
+    private void traversePostOrder(TreeNode<String> node, StringBuilder result){
+        if(node == null) return;
+        traversePostOrder(node.getLeft(), result);
+        traversePostOrder(node.getRight(), result);
+        if(!node.getElement().equals("")){
+            result.append(node.getElement()).append(" ");
+        }
     }
 
     public String engToMorse(String text){
