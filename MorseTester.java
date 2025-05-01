@@ -12,11 +12,11 @@ public class MorseTester {
         System.out.println("\nInput: " + input);
 
         //Translate English Text to Morse
-        String morse = tree.encode(input);
+        String morse = tree.engToMorse(input);
         System.out.println("Output: " + morse);
 
         //Translate Morse to English Text
-        String decoded = tree.decode(morse);
+        String decoded = tree.morseToEng(morse);
         System.out.println("Decoded: " + decoded);
 
     }
