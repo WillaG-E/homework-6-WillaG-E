@@ -59,4 +59,21 @@ private void insert(String letter, String morseCode){
         }
     }
     current.setElement(letter);
+
+    encode.put(letter.toLowerCase(), morseCode);
+    decode.put(morseCode, letter.toLowerCase());
 }
+
+public String preorder(){
+    StringBuilder result = new StringBuilder();
+    traversePreOrder(root, result);
+    return result.toString().trim();
+}
+
+
+public String postorder(){
+    StringBuilder result = new StringBuilder();
+    traversePostOrder(root, result);
+    return result.toString().trim();
+}
+
